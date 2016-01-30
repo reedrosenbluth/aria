@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= "Aria"
+  .container
+    each album, i in albums
+      .album.col-lg-3.col-md-3.col-sm-3(data-magnet="#{magnets[i]}")
+        img(src="#{art[i]}")
+        

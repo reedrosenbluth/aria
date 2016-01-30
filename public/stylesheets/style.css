@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.album {
+  margin-bottom: 30px;
+}
+
+.album img {
+  width: 100%;
+  height: 100%;
+}

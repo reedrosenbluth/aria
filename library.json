@@ -1,0 +1,28 @@
+{
+  "albums": [
+    {
+      "artist": "Kanye West",
+      "album": "The College Dropout"
+    },
+    {
+      "artist": "Kanye West",
+      "album": "Late Registration"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "Kid A"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "OK Computer"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "Amnesiac"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "In Rainbows"
+    }
+  ]
+}
