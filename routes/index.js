@@ -8,7 +8,7 @@ var library = require('../library.json');
 
 function getArt(album) {
   return new Promise(function(resolve, reject) {
-    albumArt(album.artist, album.album, 'extralarge', function(err, url) {
+    albumArt(album.artist, album.album, 'mega', function(err, url) {
       if (err) {
         return reject(err);
       }
