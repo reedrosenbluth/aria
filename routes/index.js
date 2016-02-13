@@ -22,6 +22,8 @@ function getMagnetLink(album) {
     category: '100'
   }).then(function(results) {
     return results[0].magnetLink;
+  }).catch(function(e) {
+    console.log(e);
   });
 }
 
