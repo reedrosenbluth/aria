@@ -3,7 +3,7 @@
 const _ = require('lodash');
 const lame = require('lame');
 const pump = require('pump');
-const torrentStream = require('torrent-stream');
+const WebTorrent = require('webtorrent');
 const Speaker = require('speaker');
 
 const electron = require('electron');
@@ -12,15 +12,13 @@ const BrowserWindow = electron.BrowserWindow;
 const ipc = electron.ipcMain
 
 let mainWindow;
+let client = new WebTorrent()
 
 function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600});
   mainWindow.loadURL('http://127.0.0.1:3000/');
 
   mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
   });
 }
@@ -51,11 +49,11 @@ function isMp3(file) {
 var decoder;
 var speaker = new Speaker();
 
-function playAlbum(engine, files, i) {
+function playAlbum(files, i) {
   speaker = new Speaker();
   decoder = new lame.Decoder();
   
-  var stream = engine.files[i].createReadStream();
+  var stream = files[i].createReadStream();
   
   pump(stream, decoder, function(err) {
     if (err) { console.log(err); }
@@ -65,17 +63,15 @@ function playAlbum(engine, files, i) {
     if (err) {
       console.log(err);
     } else {
-      playAlbum(engine, files, i+1);
+      playAlbum(files, i+1);
     }
   });
 }
 
 ipc.on('play-album', function(event, magnet) {
   speaker.close();
-  let engine = torrentStream(magnet);
   
-  engine.on('ready', function() {
-    let files = engine.files.sort(sortFile);
-    playAlbum(engine, files, 0);
+  client.add(magnet, function(torrent) {
+    playAlbum(torrent.files.sort(sortFile), 0);
   });
 });
