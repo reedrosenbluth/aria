@@ -6,7 +6,13 @@ import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.global.css';
 
-const store = configureStore();
+const initialState = {
+  library: {
+    albums: ['one', 'two', 'three'],
+  }
+}
+
+const store = configureStore(initialState);
 
 render(
   <Provider store={store}>
