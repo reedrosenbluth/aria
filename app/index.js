@@ -5,11 +5,11 @@ import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.global.css';
+import library from '../library.json';
+
 
 const initialState = {
-  library: {
-    albums: ['one', 'two', 'three'],
-  }
+  library: library
 }
 
 const store = configureStore(initialState);

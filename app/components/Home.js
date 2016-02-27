@@ -9,7 +9,7 @@ export default class Home extends Component {
     return (
       <div>
         <div className={styles.container}>
-          <h2>Aria</h2>
+          <div><h2>Aria</h2></div>
           <LibraryPage />
         </div>
       </div>

@@ -1,0 +1,76 @@
+{
+  "albums": [
+    {
+      "artist": "Kanye West",
+      "album": "The College Dropout"
+    },
+    {
+      "artist": "Kanye West",
+      "album": "Late Registration"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "Kid A"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "OK Computer"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "Amnesiac"
+    },
+    {
+      "artist": "Radiohead",
+      "album": "In Rainbows"
+    },
+    {
+      "artist": "My Bloody Valentine",
+      "album": "mbv"
+    },
+    {
+      "artist": "My Bloody Valentine",
+      "album": "Loveless"
+    },
+    {
+      "artist": "Blood Orange",
+      "album": "Coastal Grooves"
+    },
+    {
+      "artist": "Wild Nothing",
+      "album": "Gemini"
+    },
+    {
+      "artist": "A$AP Ferg",
+      "album": "Trap Lord"
+    },
+    {
+      "artist": "Animal Collective",
+      "album": "Sung Tongs"
+    },
+    {
+      "artist": "Beach House",
+      "album": "Bloom"
+    },
+    {
+      "artist": "Bjork",
+      "album": "Debut"
+    },
+    {
+      "artist": "Bob Dylan",
+      "album": "Blonde on Blonde"
+    },
+    {
+      "artist": "Danny Brown",
+      "album": "XXX"
+    },
+    {
+      "artist": "Destroyer",
+      "album": "Kaputt"
+    },
+    {
+      "artist": "Shabazz Palaces",
+      "album": "Black Up"
+    }
+  ]
+}
