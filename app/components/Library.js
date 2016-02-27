@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Library.css';
 
-class Library extends Component {
+export default class Library extends Component {
   static propTypes = {
-    playAlbum: PropTypes.func.isRequired,
-    albums: PropTypes.func.isRequired
+    albums: PropTypes.object.isRequired
   };
   
   render() {
-    const { playAlbum } = this.props;
+    const { albums } = this.props;
     return (
       <div className={'container-fluid'}>
         <div className={'col-lg-9'}>
