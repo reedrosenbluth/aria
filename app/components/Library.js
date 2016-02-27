@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import styles from './Library.css';
 import Album from './Album';
 
-export default class Library extends Component {
-  static propTypes = {
-    library: PropTypes.object.isRequired
-  };
+class Library extends Component {
+  componentDidMount() {
+    dispatch(fetchDataIfNeeded())
+  }
 
   render() {
     const { library } = this.props;
@@ -20,3 +20,9 @@ export default class Library extends Component {
     );
   }
 }
+
+Library.propTypes = {
+  library: PropTypes.object.isRequired
+};
+
+export default Library;
