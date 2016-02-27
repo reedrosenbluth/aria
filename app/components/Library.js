@@ -11,7 +11,7 @@ class Library extends Component {
     const { playAlbum } = this.props;
     return (
       <div className={'container-fluid'}>
-        <div className={`${styles.albumGrid} col-lg-9`}>
+        <div className={'col-lg-9'}>
           {albums.map(function(album, i) {
             return <Album album={album} key={i}/> 
           })}

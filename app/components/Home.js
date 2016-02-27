@@ -9,6 +9,7 @@ export default class Home extends Component {
       <div>
         <div className={styles.container}>
           <h2>Reed</h2>
+          <button className={"btn btn-default"}>Button</button>
           <Link to="/counter">to Counter</Link>
         </div>
       </div>
