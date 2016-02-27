@@ -1,8 +1,0 @@
-extends layout
-
-block content
-  .container
-    each album, i in albums
-      .album.col-lg-2.col-md-3.col-sm-3(data-magnet="#{magnets[i]}")
-        img(src="#{art[i]}")
-        
