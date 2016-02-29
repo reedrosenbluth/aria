@@ -10,7 +10,7 @@ export default class Album extends Component {
     const { album } = this.props;
     return (
       <div className={styles.album + ' col-lg-2 col-md-3 col-sm-3'}>
-        <img src="http://bebusinessed.com/wp-content/uploads/2014/03/734899052_13956580111.jpg" />
+        <img src={album.img} />
       </div>
     );
   }

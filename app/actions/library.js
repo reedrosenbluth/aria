@@ -1,5 +1,7 @@
 import albumArt from 'album-art';
 
+export const RECEIVE_DATA = 'RECEIVE_DATA'
+
 function getArt(album) {
   return new Promise(function(resolve, reject) {
     albumArt(album.artist, album.album, 'mega', function(err, url) {
@@ -21,10 +23,19 @@ function getMagnetLink(album) {
   });
 }
 
+function receiveData(data) {
+  return {
+    type: RECEIVE_DATA,
+    data: data
+  }
+}
+
 function fetchData(state) {
-  return fetch(`http://www.reddit.com/r/${subreddit}.json`)
-    .then(req => req.json())
-    .then(json => dispatch(receivePosts(subreddit, json)))
+  var allArt = state.library.albums.map(getArt);
+  return dispatch => {
+    return Promise.all(allArt)
+      .then(art => dispatch(receiveData(art)))
+  }
 }
 
 export function fetchDataIfNeeded(reddit) {

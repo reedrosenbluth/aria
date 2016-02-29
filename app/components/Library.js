@@ -4,7 +4,8 @@ import Album from './Album';
 
 class Library extends Component {
   componentDidMount() {
-    dispatch(fetchDataIfNeeded())
+    const { dispatch, fetchDataIfNeeded } = this.props
+    fetchDataIfNeeded()
   }
 
   render() {
@@ -22,7 +23,8 @@ class Library extends Component {
 }
 
 Library.propTypes = {
-  library: PropTypes.object.isRequired
+  library: PropTypes.object.isRequired,
+  // dispatch: PropTypes.func.isRequired
 };
 
 export default Library;
